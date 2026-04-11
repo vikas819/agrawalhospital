@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allergy Testing — Agrawal Hospital Bhopal</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
   --navy:#0a1628;
@@ -73,7 +81,6 @@ ul{list-style:none}
 .anim-delay-5{transition-delay:.5s}
 .anim-delay-6{transition-delay:.6s}
 
-
 /* ===== TOP BAR ===== */
 .top-bar{
   background:var(--navy);
@@ -124,9 +131,9 @@ ul{list-style:none}
 .logo{display:flex;align-items:center;gap:14px}
 .logo__icon{
   width:52px;height:52px;border-radius:14px;
-  /* background:linear-gradient(135deg,var(--teal),var(--teal-dark)); */
+  background:linear-gradient(135deg,var(--teal),var(--teal-dark));
   display:flex;align-items:center;justify-content:center;
-  /* box-shadow:0 4px 12px rgba(13,148,136,.3); */
+  box-shadow:0 4px 12px rgba(13,148,136,.3);
   position:relative;overflow:hidden;
 }
 .logo__icon::after{
@@ -142,7 +149,7 @@ ul{list-style:none}
 }
 .logo__sub{font-size:.65rem;color:var(--teal);font-weight:600;letter-spacing:2px;text-transform:uppercase}
 
-.nav{display:flex;align-items:center;gap:4px;margin-left:auto}
+.nav{display:flex;align-items:center;gap:4px}
 .nav__item{position:relative}
 .nav__link{
   padding:10px 16px;font-size:.88rem;font-weight:500;color:var(--gray-700);
@@ -201,33 +208,13 @@ ul{list-style:none}
 .mobile-toggle{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer}
 .mobile-toggle span{width:24px;height:2px;background:var(--gray-700);border-radius:2px;transition:.3s}
 
-/* ===== BANNER SLIDER ===== */
-.banner-slider{position:relative;width:100%;height:520px;overflow:hidden}
-.banner-slider__track{display:flex;height:100%;transition:transform .6s ease;will-change:transform}
-.banner-slider__slide{min-width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat}
-.banner-slider__control{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.35);color:white;font-size:1.5rem;cursor:pointer;border:1px solid rgba(255,255,255,.35);z-index:5;transition:all .25s}
-.banner-slider__control:hover{background:rgba(0,0,0,.55);transform:translateY(-50%) scale(1.05)}
-.banner-slider__control--prev{left:20px}
-.banner-slider__control--next{right:20px}
-.banner-slider__dots{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);display:flex;gap:10px;z-index:5}
-.banner-slider__dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer;transition:transform .25s,background .25s}
-.banner-slider__dot.active{background:var(--teal);transform:scale(1.2)}
-@media(max-width:900px){.banner-slider{height:420px}} 
-@media(max-width:640px){.banner-slider{height:300px}.banner-slider__control{width:38px;height:38px;font-size:1.2rem}.banner-slider__control--prev{left:12px}.banner-slider__control--next{right:12px}}
-
 /* ===== HERO ===== */
 .hero{
   min-height:92vh;position:relative;
   background:linear-gradient(135deg,var(--navy) 0%,var(--deep) 50%,#0b2a4a 100%);
   overflow:hidden;display:flex;align-items:center;
 }
-.hero__bg-slider{position:absolute;inset:0;overflow:hidden;z-index:1}
-.hero__slide{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;opacity:0;animation:heroSlide 18s ease-in-out infinite}
-.hero__slide:nth-child(1){animation-delay:0s}
-.hero__slide:nth-child(2){animation-delay:6s}
-.hero__slide:nth-child(3){animation-delay:12s}
-.hero__slide::after{content:'';position:absolute;inset:0;background:rgba(11,42,74,.45)}
-.hero__bg-shapes{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:2}
+.hero__bg-shapes{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 .hero__blob{
   position:absolute;border-radius:50%;
   background:radial-gradient(circle,rgba(13,148,136,.15),transparent 70%);
@@ -251,12 +238,7 @@ ul{list-style:none}
 .hero__inner{
   max-width:1400px;margin:0 auto;padding:0 40px;width:100%;
   display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
-  position:relative;z-index:3;
-}
-@keyframes heroSlide{
-  0%,20%{opacity:0}
-  25%,45%{opacity:1}
-  50%,100%{opacity:0}
+  position:relative;z-index:2;
 }
 .hero__content{color:white}
 .hero__badge{
@@ -406,26 +388,9 @@ ul{list-style:none}
 .about__img{
   width:100%;aspect-ratio:4/5;object-fit:cover;
   background:linear-gradient(135deg,var(--teal),var(--navy));
+  display:flex;align-items:center;justify-content:center;
   font-size:1rem;color:rgba(255,255,255,.5);
 }
-.about__img-slider{
-  position:relative;display:flex;width:100%;height:100%;transition:transform .6s ease;will-change:transform;  align-items:stretch;justify-content:flex-start;}
-.about__img-slide{
-  flex:0 0 100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat;
-}
-.about__img-control{
-  position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.35);
-  background:rgba(0,0,0,.35);color:white;font-size:1.4rem;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:all .25s;
-}
-.about__img-control:hover{background:rgba(0,0,0,.55);transform:translateY(-50%) scale(1.05)}
-.about__img-control--prev{left:18px}
-.about__img-control--next{right:18px}
-.about__img-dots{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:10px;z-index:5}
-.about__img-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer;transition:transform .25s,background .25s}
-.about__img-dot.active{background:var(--teal);transform:scale(1.15)}
-.about__img-wrap{position:relative}
-@media(max-width:900px){.about__img{aspect-ratio:4/5}}
-@media(max-width:640px){.about__img-control{width:34px;height:34px;font-size:1.1rem}.about__img-dots{bottom:12px}}
 .about__experience{
   position:absolute;bottom:-24px;right:-24px;
   background:white;border-radius:var(--radius-lg);padding:28px 36px;
@@ -479,24 +444,10 @@ ul{list-style:none}
 .founder__img{
   width:100%;aspect-ratio:3/4;
   background:linear-gradient(135deg,rgba(13,148,136,.3),rgba(15,33,64,.8));
+  display:flex;align-items:center;justify-content:center;
   font-size:.9rem;color:rgba(255,255,255,.4);
   position:relative;
 }
-.founder__img-slider{
-  position:relative;display:flex;width:100%;height:100%;transition:transform .6s ease;will-change:transform;  align-items:stretch;justify-content:flex-start;}
-.founder__img-slide{
-  flex:0 0 100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat;
-}
-.founder__img-control{
-  position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.35);
-  background:rgba(0,0,0,.35);color:white;font-size:1.4rem;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:all .25s;
-}
-.founder__img-control:hover{background:rgba(0,0,0,.55);transform:translateY(-50%) scale(1.05)}
-.founder__img-control--prev{left:18px}
-.founder__img-control--next{right:18px}
-.founder__img-dots{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:10px;z-index:5}
-.founder__img-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer;transition:transform .25s,background .25s}
-.founder__img-dot.active{background:var(--teal);transform:scale(1.15)}
 .founder__img::after{
   content:'';position:absolute;inset:0;
   background:linear-gradient(to top,rgba(10,22,40,.6),transparent 40%);
@@ -512,7 +463,7 @@ ul{list-style:none}
   display:flex;flex-direction:column;gap:8px;z-index:2;
 }
 .founder__qual{
-  background:#fff;backdrop-filter:blur(10px);
+  background:rgba(0,0,0,.5);backdrop-filter:blur(10px);
   padding:6px 14px;border-radius:20px;font-size:.72rem;
   font-weight:600;color:var(--teal-light);letter-spacing:.3px;
   border:1px solid rgba(13,148,136,.2);
@@ -545,21 +496,6 @@ ul{list-style:none}
 }
 .founder__hl-text{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:6px;line-height:1.4}
 
-/* ===== RESPIRATORY CONDITIONS ===== */
-.respiratory-conditions{padding:80px 0;background:var(--gray-50)}
-.respiratory-conditions__grid{display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start}
-.respiratory-conditions__title-grid{}
-.respiratory-conditions__title{font-size:2.2rem;margin-bottom:16px;color:var(--navy);line-height:1.2}
-.respiratory-conditions__subtitle{font-size:1rem;color:var(--gray-600);line-height:1.6;margin-bottom:0}
-.respiratory-conditions__list-grid{}
-.respiratory-conditions__list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;list-style:none;padding:0;margin:0}
-.respiratory-conditions__list li{
-  padding:10px 16px;background:white;border-radius:8px;border:1px solid var(--gray-200);
-  font-size:.9rem;color:var(--gray-700);font-weight:500;text-align:center;
-  transition: all .25s;
-}
-.respiratory-conditions__list li:hover{background:var(--teal-light);color:white;border-color:var(--teal-light)}
-
 /* ===== DR NEELIMA ===== */
 .co-founder{padding:120px 0;background:var(--cream)}
 .co-founder__grid{
@@ -584,28 +520,14 @@ ul{list-style:none}
 .co-founder__img{
   width:100%;aspect-ratio:3/4;
   background:linear-gradient(135deg,rgba(13,148,136,.2),rgba(212,168,83,.1));
+  display:flex;align-items:center;justify-content:center;
   font-size:.9rem;color:var(--gray-400);
 }
-.co-founder__img-slider{
-  position:relative;display:flex;width:100%;height:100%;transition:transform .6s ease;will-change:transform;  align-items:stretch;justify-content:flex-start;}
-.co-founder__img-slide{
-  flex:0 0 100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat;
-}
-.co-founder__img-control{
-  position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.35);
-  background:rgba(0,0,0,.35);color:white;font-size:1.4rem;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:all .25s;
-}
-.co-founder__img-control:hover{background:rgba(0,0,0,.55);transform:translateY(-50%) scale(1.05)}
-.co-founder__img-control--prev{left:18px}
-.co-founder__img-control--next{right:18px}
-.co-founder__img-dots{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:10px;z-index:5}
-.co-founder__img-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer;transition:transform .25s,background .25s}
-.co-founder__img-dot.active{background:var(--teal);transform:scale(1.15)}
 .co-founder__badge{
   position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);
   background:var(--teal);color:white;padding:12px 28px;border-radius:50px;
   font-weight:600;font-size:.85rem;box-shadow:0 8px 20px rgba(13,148,136,.3);
-  white-space:nowrap;z-index: 999;
+  white-space:nowrap;
 }
 
 /* ===== DEPARTMENTS ===== */
@@ -720,7 +642,7 @@ ul{list-style:none}
 .team-card__photo{
   width:100%;height:100%;object-fit:cover;
   background:linear-gradient(135deg,var(--gray-100),var(--gray-200));
-  display:flex;align-items:start;justify-content:center;
+  display:flex;align-items:center;justify-content:center;
   font-size:2rem;color:var(--gray-400);
 }
 .team-card__name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;margin-bottom:4px}
@@ -948,6 +870,7 @@ ul{list-style:none}
   .stat-item__num{font-size:2.2rem}
 }
 
+
 /* ===== PAGE HERO for inner pages ===== */
 .page-hero{padding:140px 0 70px;background:linear-gradient(135deg,var(--navy) 0%,var(--deep) 50%,#0b2a4a 100%);position:relative;overflow:hidden;color:white}
 .page-hero__shapes{position:absolute;inset:0;pointer-events:none}
@@ -963,9 +886,6 @@ ul{list-style:none}
 .page-hero__title{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;margin-bottom:12px;animation:fadeInUp .8s .1s both}
 .page-hero__desc{font-size:1.05rem;color:rgba(255,255,255,.6);max-width:600px;line-height:1.7;animation:fadeInUp .8s .2s both}
 
-@media(max-width:1024px){.page-content__grid{grid-template-columns:1fr}.page-hero__title{font-size:2rem}}
-@media(max-width:768px){.svc-grid{grid-template-columns:1fr}.page-hero{padding:120px 0 50px}.disease-tags-light{grid-template-columns:repeat(2,1fr)}}
-
 /* ===== INNER PAGE CONTENT ===== */
 .page-content{padding:100px 0}
 .page-content__grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
@@ -974,15 +894,281 @@ ul{list-style:none}
 .page-content__visual-inner svg{margin:0 auto 12px;display:block;opacity:.3}
 .page-content h3{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:600;color:var(--gray-800);margin-bottom:16px}
 .page-content p{font-size:.96rem;line-height:1.8;color:var(--gray-500);margin-bottom:14px}
-.section-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: .75rem;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 16px;
-}
+
+/* ===== SERVICES LIST ===== */
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.svc-item{display:flex;align-items:center;gap:8px;font-size:.88rem;color:var(--gray-600);padding:8px 0}
+.svc-item svg{width:17px;height:17px;color:var(--teal);flex-shrink:0}
+
+/* ===== DOCTOR BOX ===== */
+.doctor-box{background:linear-gradient(135deg,rgba(13,148,136,.06),rgba(212,168,83,.04));border:1px solid rgba(13,148,136,.12);border-radius:var(--radius-lg);padding:32px;margin-top:36px}
+.doctor-box__tag{font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+.doctor-box__name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:600;color:var(--gray-800);margin-bottom:6px}
+.doctor-box__creds{font-size:.82rem;color:var(--teal);font-weight:600;margin-bottom:12px}
+.doctor-box__text{font-size:.9rem;line-height:1.7;color:var(--gray-500)}
+
+/* ===== DISEASE TAGS for light bg ===== */
+.disease-tags-light{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.disease-tag-light{padding:12px 18px;border-radius:8px;background:var(--gray-50);border:1px solid var(--gray-200);color:var(--gray-600);font-size:.82rem;text-align:center;transition:all .3s}
+.disease-tag-light:hover{background:rgba(13,148,136,.06);border-color:var(--teal);color:var(--teal)}
+
 @media(max-width:1024px){.page-content__grid{grid-template-columns:1fr}.page-hero__title{font-size:2rem}}
+@media(max-width:768px){.svc-grid{grid-template-columns:1fr}.page-hero{padding:120px 0 50px}.disease-tags-light{grid-template-columns:repeat(2,1fr)}}
+
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+  <div class="top-bar__inner">
+    <div class="top-bar__left">
+      <div class="top-bar__item">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <span>E-3/34, Arera Colony, Near Veer Savarkar Flyover, Bhopal (M.P.)</span>
+      </div>
+      <div class="top-bar__item">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <span>info@agrawalhospital.com</span>
+      </div>
+    </div>
+    <div class="top-bar__right">
+      <div class="top-bar__badge emergency-pulse">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+        24/7 Emergency
+      </div>
+      <div class="top-bar__badge" style="background:var(--gold);color:var(--navy)">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        NABH Accredited
+      </div>
+      <div class="top-bar__social">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29.94 29.94 0 001 11.75a29.94 29.94 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29.94 29.94 0 00.46-5.25 29.94 29.94 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="var(--navy)"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="header" id="header">
+  <div class="header__inner">
+    <a href="#" class="logo">
+      <div class="logo__icon">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+      </div>
+      <div class="logo__text">
+        <span class="logo__name">Agrawal Hospital</span>
+        <span class="logo__sub">Multispeciality &bull; Bhopal</span>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <div class="nav__item">
+        <a href="index.html" class="nav__link">Home</a>
+      </div>
+      <div class="nav__item">
+        <a href="founder.html" class="nav__link">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <div class="nav__dropdown">
+          <a href="founder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg> Founder &amp; Director</a>
+          <a href="managing-director.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg> Managing Director</a>
+          <a href="our-experts.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg> Our Experts</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="respiratory-medicine.html" class="nav__link">Departments <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <div class="nav__dropdown">
+          <a href="#" href="respiratory-medicine.html">Respiratory Medicine</a>
+          <a href="#" href="obstetrics-gynaecology.html">Obstetrics &amp; Gynaecology</a>
+          <a href="#" href="emergency-critical-care.html">Emergency &amp; Critical Care</a>
+          <a href="#" href="general-surgery.html">General Surgery</a>
+          <a href="#" href="general-medicine.html">General Medicine</a>
+          <a href="#" href="clinical-haematology.html">Clinical Haematology</a>
+          <a href="#" href="ent.html">ENT</a>
+          <a href="#" href="anaesthesiology.html">Anaesthesiology</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="diagnostics.html" class="nav__link active">Diagnostics</a>
+      </div>
+      <div class="nav__item">
+        <a href="facilities.html" class="nav__link">Facilities</a>
+      </div>
+      <div class="nav__item">
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+    </nav>
+
+    <div class="header__cta">
+      <a href="tel:+917554283383" class="btn btn--outline btn--small">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call Us
+      </a>
+      <a href="contact.html" class="btn btn--primary btn--small">Book Appointment</a>
+    </div>
+
+    <div class="mobile-toggle" onclick="document.querySelector('.nav').classList.toggle('nav--open')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+
+<section class="page-hero">
+  <div class="page-hero__shapes"><div class="page-hero__blob page-hero__blob--1"></div><div class="page-hero__blob page-hero__blob--2"></div><div class="page-hero__grid"></div></div>
+  <div class="page-hero__inner">
+    <div class="page-hero__breadcrumb"><a href="index.html">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg> <span>Allergy Testing</span></div>
+    <h1 class="page-hero__title">Allergy Testing</h1>
+    <p class="page-hero__desc">Comprehensive Allergy Evaluation</p>
+  </div>
+</section>
+<section class="page-content"><div class="container"><div class="page-content__grid">
+  <div class="anim-left">
+    <div class="section-tag">Diagnostic Services</div>
+    <h3>Allergy Testing</h3>
+    <p>Identifies allergens causing respiratory and skin symptoms. Guides immunotherapy and management.</p>
+  </div>
+  <div class="page-content__visual anim-right"><div class="page-content__visual-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="64" height="64" style="opacity:.25"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><div style="font-size:.95rem;margin-top:4px">Allergy Testing</div><div style="font-size:.72rem;color:var(--gray-400);margin-top:2px">Agrawal Hospital</div></div></div>
+</div></div></section>
+<section class="cta">
+  <div class="cta__glow"></div>
+  <div class="container">
+    <div class="cta__inner anim-up">
+      <div class="section-tag section-tag--light">Get In Touch</div>
+      <h2 class="cta__title">Your Health Is Our Priority</h2>
+      <p class="cta__desc">Whether it's an emergency or a routine check-up, our expert medical team is available 24/7.</p>
+      <div class="cta__actions">
+        <a href="contact.html" class="btn btn--primary" style="padding:16px 36px;font-size:.95rem">Book Appointment</a>
+        <a href="tel:+918959444999" class="btn btn--emergency" style="padding:16px 36px;font-size:.95rem">Emergency Call</a>
+      </div>
+      <div class="cta__phones">
+        <div class="cta__phone"><strong>+91-755-4283383</strong></div>
+        <div class="cta__phone"><strong>+91-755-4278190</strong></div>
+        <div class="cta__phone"><strong>+91-8959444999</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <div class="footer__logo-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+          </div>
+          <div class="footer__logo-text">Agrawal Hospital</div>
+        </div>
+        <p class="footer__desc">We strive to exceed your expectations and encourage you to be an active participant in your care. We treat you with courtesy and respect, listen carefully, and explain things to ensure your understanding.</p>
+        <div class="footer__social">
+          <a href="#"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="https://www.youtube.com/channel/UCSOfbbZ3V7-ASSnf-pCWPYg/videos"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29.94 29.94 0 001 11.75a29.94 29.94 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29.94 29.94 0 00.46-5.25 29.94 29.94 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48" fill="var(--navy)"/></svg></a>
+          <a href="#"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__heading">Clinical Services</div>
+        <div class="footer__links">
+          <a href="#" href="respiratory-medicine.html">Respiratory Medicine</a>
+          <a href="#" href="obstetrics-gynaecology.html">Obstetrics & Gynaecology</a>
+          <a href="#" href="emergency-critical-care.html">Emergency & Critical Care</a>
+          <a href="#" href="general-surgery.html">General Surgery</a>
+          <a href="#" href="general-medicine.html">General Medicine</a>
+          <a href="#" href="clinical-haematology.html">Clinical Haematology</a>
+          <a href="#">ENT</a>
+          <a href="#" href="anaesthesiology.html">Anaesthesiology</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__heading">Diagnostics</div>
+        <div class="footer__links">
+          <a href="#" href="pathology.html">Pathology Lab</a>
+          <a href="#" href="xray.html">X-Ray</a>
+          <a href="#" href="ultrasound.html">Ultrasound</a>
+          <a href="#" href="ecg.html">ECG & 2D Echo</a>
+          <a href="#" href="spirometry.html">Spirometry & PFT</a>
+          <a href="#" href="bronchoscopy.html">Video Bronchoscopy</a>
+          <a href="#" href="colour-doppler.html">Colour Doppler</a>
+          <a href="#" href="allergy-testing.html">Allergy Testing</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__heading">Quick Links</div>
+        <div class="footer__links">
+          <a href="#" href="founder.html">About Us</a>
+          <a href="#" href="our-experts.html">Our Experts</a>
+          <a href="#" href="facilities.html">Facilities</a>
+          <a href="#" href="index.html">Events & News</a>
+          <a href="#" href="index.html">Video Gallery</a>
+          <a href="#" href="reviews.html">Patient Reviews</a>
+          <a href="#" href="contact.html">Contact Us</a>
+          <a href="#" href="contact.html">Careers</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copy">&copy; 2025 Agrawal Multispeciality Hospital, Bhopal. All rights reserved.</div>
+      <div class="footer__badges">
+        <div class="footer__badge">NABH Accredited</div>
+        <div class="footer__badge">ISO Certified</div>
+        <div class="footer__badge">BSNL Authorized</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== SCROLL ANIMATIONS JS ===== -->
+<script>
+// Intersection Observer for scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('anim-active');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.anim-up,.anim-left,.anim-right,.anim-fade').forEach(el => observer.observe(el));
+
+// Header scroll effect
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const header = document.getElementById('header');
+  const scroll = window.pageYOffset;
+  if (scroll > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+  lastScroll = scroll;
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Counter animation for stats
+function animateCounters() {
+  document.querySelectorAll('.stat-item__num,.hero__stat-num,.founder__hl-num,.about__experience-num').forEach(el => {
+    const text = el.textContent;
+    if (text.match(/[\d,]+/)) {
+      el.style.animation = 'countUp .8s ease-out both';
+    }
+  });
+}
+setTimeout(animateCounters, 500);
+</script>
+</body>
+</html>
+
+
+</body>
+</html>
