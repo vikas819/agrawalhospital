@@ -773,7 +773,7 @@ ul{list-style:none}
   width:max-content;
 }
 .tpa__logo{
-  height:50px;padding:12px 24px;
+  height:70px;padding:12px 24px;
   background:white;border-radius:var(--radius);border:1px solid var(--gray-100);
   display:flex;align-items:center;justify-content:center;
   min-width:140px;font-size:.82rem;color:var(--gray-500);font-weight:500;
@@ -986,3 +986,18 @@ ul{list-style:none}
     margin-bottom: 16px;
 }
 @media(max-width:1024px){.page-content__grid{grid-template-columns:1fr}.page-hero__title{font-size:2rem}}
+
+/* ===== DISEASE TAGS for light bg ===== */
+.disease-tags-light{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.disease-tag-light{padding:12px 18px;border-radius:8px;background:var(--gray-50);border:1px solid var(--gray-200);color:var(--gray-600);font-size:.82rem;text-align:center;transition:all .3s}
+.disease-tag-light:hover{background:rgba(13,148,136,.06);border-color:var(--teal);color:var(--teal)}
+
+@media(max-width:768px){.svc-grid{grid-template-columns:1fr}.page-hero{padding:120px 0 50px}.disease-tags-light{grid-template-columns:repeat(2,1fr)}}
+
+
+/* ===== SERVICES LIST ===== */
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.svc-item{display:flex;align-items:center;gap:8px;font-size:.88rem;color:var(--gray-600);padding:8px 0}
+.svc-item svg{width:17px;height:17px;color:var(--teal);flex-shrink:0}
+
+@media(max-width:768px){.svc-grid{grid-template-columns:1fr}.page-hero{padding:120px 0 50px}.disease-tags-light{grid-template-columns:repeat(2,1fr)}}
