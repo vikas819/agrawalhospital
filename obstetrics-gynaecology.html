@@ -58,9 +58,13 @@
       </div>
       <div class="top-bar__right">
         <div class="top-bar__badge emergency-pulse">
-        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"></path></svg>
-        24/7 Emergency
-      </div>
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z">
+            </path>
+          </svg>
+          24/7 Emergency
+        </div>
         <div class="top-bar__badge" style="background:var(--gold);color:var(--navy)">
           <svg viewBox="0 0 24 24">
             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -108,8 +112,7 @@
                 <circle cx="12" cy="8" r="4" />
                 <path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2" />
               </svg> Founder &amp; Director</a>
-            <a href="cofounder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2">
+            <a href="cofounder.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="12" cy="8" r="4" />
                 <path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2" />
               </svg> Managing Director</a>
@@ -121,7 +124,7 @@
           </div>
         </div>
         <div class="nav__item">
-          <a href="respiratory-medicine.html" class="nav__link active">Departments <svg viewBox="0 0 24 24" fill="none"
+          <a href="#departments" class="nav__link">Departments <svg viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2">
               <polyline points="6 9 12 15 18 9" />
             </svg></a>
@@ -137,7 +140,24 @@
           </div>
         </div>
         <div class="nav__item">
-          <a href="diagnostics.html" class="nav__link">Diagnostics</a>
+          <a href="#diagnostics" class="nav__link">Diagnostics <svg viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <div class="nav__dropdown">
+            <a href="pathology.html">All Pathological Tests</a>
+            <a href="x-ray.html">X-ray</a>
+            <a href="ultrasound.html">Ultrasound</a>
+            <a href="ecg.html">ECG</a>
+            <a href="colour-doppler.html">Colour Doppler</a>
+            <a href="pulmonary-function-test.html">Pulmonary Function Test</a>
+            <a href="allergy-testing.html">Allergy Testing</a>
+            <a href="sleep-study.html">Sleep Study</a>
+            <a href="audiometry.html">Audiometry</a>
+            <a href="2d-echo.html">2D Echo</a>
+            <a href="spirometry.html">Spirometry</a>
+            <a href="operating-theatre.html">Operating Theatre</a>
+          </div>
         </div>
         <div class="nav__item">
           <a href="facilities.html" class="nav__link">Facilities</a>
@@ -147,7 +167,7 @@
         </div>
       </nav>
 
-      
+
 
       <div class="mobile-toggle" onclick="document.querySelector('.nav').classList.toggle('nav--open')">
         <span></span><span></span><span></span>
@@ -178,7 +198,15 @@
         <div class="anim-left">
           <div class="section-tag">Obstetrics & Gynaecology</div>
           <h3>Obstetrics & Gynaecology</h3>
-          <p>Our key aim is to support you to have the best possible birth experience and to help ensure that you have a healthy baby. We make every effort in providing high quality care, responding to the needs of mothers and their babies, in a friendly and professional environment. To-be-Mothers, who choose Agrawal hospital for their maternity care can be assured about highest quality specialist and pregnancy care. Agrawal hospital provides expert and comprehensive care for women and babies before, during and after pregnancy. We provide families with individual attention and support to facilitate a healthy and safe pregnancy and delivery. Our team is committed to treat people with kindness, understanding and dignity and will respect the privacy and cultural beliefs of families. We do our best to be very transparent and clear in our communications between healthcare professionals, women and their family members.</p>
+          <p>Our key aim is to support you to have the best possible birth experience and to help ensure that you have a
+            healthy baby. We make every effort in providing high quality care, responding to the needs of mothers and
+            their babies, in a friendly and professional environment. To-be-Mothers, who choose Agrawal hospital for
+            their maternity care can be assured about highest quality specialist and pregnancy care. Agrawal hospital
+            provides expert and comprehensive care for women and babies before, during and after pregnancy. We provide
+            families with individual attention and support to facilitate a healthy and safe pregnancy and delivery. Our
+            team is committed to treat people with kindness, understanding and dignity and will respect the privacy and
+            cultural beliefs of families. We do our best to be very transparent and clear in our communications between
+            healthcare professionals, women and their family members.</p>
           <h4>Conditions we Treat</h4>
           <div class="svc-grid">
             <div class="svc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -210,10 +238,11 @@
                 <polyline points="20 6 9 17 4 12" />
               </svg> Ovarian Cyst Removal</div>
           </div>
-          
+
         </div>
         <div class="anim-right" style="text-align:center">
-          <img src="assets/services/Gynacologist.jpg" alt="Gynacologist" style="border-radius:var(--radius);;width:100%;height:auto;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,0.2)">
+          <img src="assets/services/Gynacologist.jpg" alt="Gynacologist"
+            style="border-radius:var(--radius);;width:100%;height:auto;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,0.2)">
         </div>
       </div>
     </div>
@@ -224,24 +253,62 @@
       <div class="section-header anim-up" style="text-align:center;max-width:996px;margin:0 auto 32px;">
         <div class="section-tag section-tag--light" style="color:#7dd3fc;">OB/GYN Overview</div>
         <h2 class="section-title" style="color:#fff;">Who Is An Obstetrician And Gynecologist?</h2>
-        <p style="margin-top:1rem;color:rgba(248,250,252,.8);line-height:1.8;">Obstetrics is a medical specialty dealing with the fields of birth and related issues and Gynecology deals with diseases particular to women. OB is a commonly used abbreviation for obstetrics and GYN is the abbreviation for gynecology or for a gynecologist, a practitioner who specializes in treating diseases of the female reproductive organs. On the other hand, OB/GYN is short for obstetrician/gynecologist, a doctor who both delivers babies and diagnosis and treats diseases related to the female reproductive organs.</p>
-        <p style="margin-top:1rem;color:rgba(248,250,252,.8);line-height:1.8;">An obstetrician is a physician who specializes in the surgical care of women and their children during pregnancy, childbirth, pueperium and post-natal care. They also perform regular ultrasounds during pregnancy to determine the health of the fetus, identify any complications and know the gestational period of the fetus. Identify if there are any high risk factors in women during pregnancy, delivery and later.</p>
-        <p style="margin-top:1rem;color:rgba(248,250,252,.8);line-height:1.8;">A gynecologist is a physician who specializes in the medical care of women and in health of the female reproductive system. They also deal with pap smear, infections of vaginal and uterine origin, fertility problems, contraception, tubal ligations and hysterectomy.</p>
-        <p style="margin-top:1rem;color:rgba(248,250,252,.8);line-height:1.8;">Generally, the education and training for obstetrics and gynecology occurs concurrently. Therefore, an obstetrician/gynecologist is a physician who specializes in providing both medical and surgical care to women. They have particular expertise in pregnancy, childbirth and reproductive system disorders. This encompasses preventive care, treatment, prenatal care, pap test screening, detection of sexually transmitted diseases, and family planning.</p>
-        <p style="margin-top:1rem;color:rgba(248,250,252,.8);line-height:1.8;">An obstetrician/gynecologist can serve as primary physicians and also often serve as consultants to other physicians. They usually choose to specialize in the following areas:</p>
+        <p style="margin-top:1rem;color:rgba(248,250,252,.8);line-height:1.8;">Obstetrics is a medical specialty dealing
+          with the fields of birth and related issues and Gynecology deals with diseases particular to women. OB is a
+          commonly used abbreviation for obstetrics and GYN is the abbreviation for gynecology or for a gynecologist, a
+          practitioner who specializes in treating diseases of the female reproductive organs. On the other hand, OB/GYN
+          is short for obstetrician/gynecologist, a doctor who both delivers babies and diagnosis and treats diseases
+          related to the female reproductive organs.</p>
+        <p style="margin-top:1rem;color:rgba(248,250,252,.8);line-height:1.8;">An obstetrician is a physician who
+          specializes in the surgical care of women and their children during pregnancy, childbirth, pueperium and
+          post-natal care. They also perform regular ultrasounds during pregnancy to determine the health of the fetus,
+          identify any complications and know the gestational period of the fetus. Identify if there are any high risk
+          factors in women during pregnancy, delivery and later.</p>
+        <p style="margin-top:1rem;color:rgba(248,250,252,.8);line-height:1.8;">A gynecologist is a physician who
+          specializes in the medical care of women and in health of the female reproductive system. They also deal with
+          pap smear, infections of vaginal and uterine origin, fertility problems, contraception, tubal ligations and
+          hysterectomy.</p>
+        <p style="margin-top:1rem;color:rgba(248,250,252,.8);line-height:1.8;">Generally, the education and training for
+          obstetrics and gynecology occurs concurrently. Therefore, an obstetrician/gynecologist is a physician who
+          specializes in providing both medical and surgical care to women. They have particular expertise in pregnancy,
+          childbirth and reproductive system disorders. This encompasses preventive care, treatment, prenatal care, pap
+          test screening, detection of sexually transmitted diseases, and family planning.</p>
+        <p style="margin-top:1rem;color:rgba(248,250,252,.8);line-height:1.8;">An obstetrician/gynecologist can serve as
+          primary physicians and also often serve as consultants to other physicians. They usually choose to specialize
+          in the following areas:</p>
       </div>
       <div class="anim-up">
         <div class="svc-grid" style="grid-template-columns:repeat(2,1fr);gap:14px;color:#fff;">
-          <div class="svc-item" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">Acute and chronic medical conditions</div>
-          <div class="svc-item" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">Adolescent gynecology</div>
-          <div class="svc-item" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">Cervical and Ovarian Cancer</div>
-          <div class="svc-item" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">Endocrinology</div>
-          <div class="svc-item" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">Health maintenance during pregnancy</div>
-          <div class="svc-item" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">Infertility</div>
-          <div class="svc-item" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">Operative gynecology</div>
-          <div class="svc-item" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">Pregnancy and delivery</div>
-          <div class="svc-item" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">Preventive health</div>
-          <div class="svc-item" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">Obstetrics &amp; Gynecology Subspecialties in India</div>
+          <div class="svc-item"
+            style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">
+            Acute and chronic medical conditions</div>
+          <div class="svc-item"
+            style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">
+            Adolescent gynecology</div>
+          <div class="svc-item"
+            style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">
+            Cervical and Ovarian Cancer</div>
+          <div class="svc-item"
+            style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">
+            Endocrinology</div>
+          <div class="svc-item"
+            style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">
+            Health maintenance during pregnancy</div>
+          <div class="svc-item"
+            style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">
+            Infertility</div>
+          <div class="svc-item"
+            style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">
+            Operative gynecology</div>
+          <div class="svc-item"
+            style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">
+            Pregnancy and delivery</div>
+          <div class="svc-item"
+            style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">
+            Preventive health</div>
+          <div class="svc-item"
+            style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff;justify-content:center;">
+            Obstetrics &amp; Gynecology Subspecialties in India</div>
         </div>
       </div>
     </div>

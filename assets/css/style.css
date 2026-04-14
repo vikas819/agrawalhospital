@@ -969,10 +969,12 @@ ul{list-style:none}
 /* ===== INNER PAGE CONTENT ===== */
 .page-content{padding:100px 0}
 .page-content__grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.page-content__grid-single{grid-template-columns:1fr;gap:0px;margin-top: 30px;}
 .page-content__visual{border-radius:var(--radius-xl);overflow:hidden;background:linear-gradient(135deg,rgba(13,148,136,.08),rgba(212,168,83,.05));aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg);border:3px solid var(--white)}
 .page-content__visual-inner{text-align:center;padding:40px;color:var(--gray-400)}
 .page-content__visual-inner svg{margin:0 auto 12px;display:block;opacity:.3}
 .page-content h3{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:600;color:var(--gray-800);margin-bottom:16px}
+.page-content h4{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;color:var(--gray-800);margin-bottom:16px}
 .page-content p{font-size:.96rem;line-height:1.8;color:var(--gray-500);margin-bottom:14px}
 .section-tag {
     display: inline-flex;
