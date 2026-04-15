@@ -33,6 +33,108 @@
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .patient__img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, rgba(13, 148, 136, .3), rgba(15, 33, 64, .8));
+      font-size: .9rem;
+      color: rgba(255, 255, 255, .4);
+      position: relative;
+    }
+
+    /* The 'window' that hides the extra images */
+    .patient__img-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3/4;
+      /* Or your preferred height */
+      overflow: hidden;
+    }
+
+    /* The 'track' that actually moves */
+    .patient__img-slider {
+      display: flex;
+      flex-direction: row;
+      /* Force side-by-side */
+      flex-wrap: nowrap;
+      /* Prevent images from dropping to next line */
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    /* Each individual slide */
+    .patient__img-slide {
+      flex: 0 0 100%;
+      /* Force each slide to be exactly 100% of the frame's width */
+      width: 100%;
+      height: 100%;
+    }
+
+    .patient__img-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .35);
+      background: rgba(0, 0, 0, .35);
+      color: white;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 5;
+      transition: all .25s;
+    }
+
+    .patient__img-control:hover {
+      background: rgba(0, 0, 0, .55);
+      transform: translateY(-50%) scale(1.05)
+    }
+
+    .patient__img-control--prev {
+      left: 18px
+    }
+
+    .patient__img-control--next {
+      right: 18px
+    }
+
+    .patient__img-dots {
+      position: absolute;
+      left: 50%;
+      bottom: 16px;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 5
+    }
+
+    .patient__img-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .35);
+      cursor: pointer;
+      transition: transform .25s, background .25s
+    }
+
+    .patient__img-dot.active {
+      background: var(--teal);
+      transform: scale(1.15)
+    }
+
+    .patient__img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 22, 40, .6), transparent 40%);
+    }
+  </style>
 </head>
 
 <body>
@@ -89,9 +191,8 @@
     <div class="header__inner">
       <a href="index.html" class="logo">
         <div class="logo__icon">
-          <img src="assets/img/favicon.png" alt="Agrawal Hospital Logo">
-          <!-- <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg> -->
-        </div>
+                    <img src="assets/img/logo.png" alt="Agrawal Hospital Logo">
+                </div>
         <div class="logo__text">
           <span class="logo__name">Agrawal Hospital</span>
           <span class="logo__sub">Multispeciality &bull; Bhopal</span>
@@ -156,15 +257,31 @@
             <a href="audiometry.html">Audiometry</a>
             <a href="2d-echo.html">2D Echo</a>
             <a href="spirometry.html">Spirometry</a>
-            <a href="operating-theatre.html">Operating Theatre</a>
+            
           </div>
         </div>
         <div class="nav__item">
-          <a href="facilities.html" class="nav__link">Facilities</a>
-        </div>
-        <div class="nav__item">
-          <a href="contact.html" class="nav__link">Contact</a>
-        </div>
+                    <a href="facilities.html" class="nav__link">Facilities</a>
+                </div>
+                <div class="nav__item">
+                    <a href="#take-a-look" class="nav__link">Take a look <svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg></a>
+                    <div class="nav__dropdown">
+                        <a href="events.html">Events</a>
+                        <a href="camp.html">Camp</a>
+                        <a href="expert-talks.html">Expert Talks</a>
+                        <a href="challenging-cases.html">Challenging Cases Treated</a>
+                        <a href="social-activities.html">Social Activities & Events</a>
+                        <a href="video-gallery.html">Video Gallery</a>
+                        <a href="hospital.html">Hospital</a>
+                        <a href="reviews.html">Reviews</a>
+                    </div>
+                </div>
+                <div class="nav__item">
+                    <a href="contact.html" class="nav__link">Contact</a>
+                </div>
       </nav>
 
       <div class="mobile-toggle" onclick="document.querySelector('.nav').classList.toggle('nav--open')">
@@ -195,7 +312,15 @@
         <div class="anim-left">
           <div class="section-tag">Our Facilities</div>
           <h3>Hospital Wards</h3>
-          <p>The Agrawal Hospital ICU is a specialized adult medical and surgical care facility for patients who need constant monitoring, intensive nursing care, and complex respiratory support. ICU is centrally air conditioned with 8 cubicles. All of them are equipped with mechanical ventilators, central oxygen&suction, multipara sophisticated bedside monitors and other life support equipments. Our ICU is equipped to provide safe, high-quality, personalized care. All of our intensive care nurses have advanced training in the needs of the critically ill patient. Agrawal hospital's extensive benches of physicians are always available for consultation. In addition to a high-technology care plan, we offer encouragement, understanding, respect, care and compassion to the patients and the family members. We make ourselves as accessible as possible to listen your concerns and answer your queries.</p>
+          <p>The Agrawal Hospital ICU is a specialized adult medical and surgical care facility for patients who need
+            constant monitoring, intensive nursing care, and complex respiratory support. ICU is centrally air
+            conditioned with 8 cubicles. All of them are equipped with mechanical ventilators, central oxygen&suction,
+            multipara sophisticated bedside monitors and other life support equipments. Our ICU is equipped to provide
+            safe, high-quality, personalized care. All of our intensive care nurses have advanced training in the needs
+            of the critically ill patient. Agrawal hospital's extensive benches of physicians are always available for
+            consultation. In addition to a high-technology care plan, we offer encouragement, understanding, respect,
+            care and compassion to the patients and the family members. We make ourselves as accessible as possible to
+            listen your concerns and answer your queries.</p>
         </div>
         <div class="page-content__visual anim-right">
           <img src="assets/services/ward.jpg" alt="Hospital Ward" width="100%">
@@ -209,7 +334,15 @@
         <div class="anim-left">
           <div class="section-tag">Our Facilities</div>
           <h3>Intensive Care Unit</h3>
-          <p>The Agrawal Hospital ICU is a specialized adult medical and surgical care facility for patients who need constant monitoring, intensive nursing care,and complex respiratory support. ICU is centrally air conditioned with 8 cubicles .All of them are equipped with mechanical ventilators, central oxygen&suction, multipara sophisticated bedside monitors and other life support equipments. Our ICU is equipped to provide safe, high-quality, personalized care. All of our intensive care nurses have advanced training in the needs of the critically ill patient. Agrawal hospital’s extensive benches of physicians are always available for consultation. In addition to a high-technology care plan, we offer encouragement, understanding, respect, care and compassion to the patients and the family members. We make ourselves as accessible as possible to listen your concerns and answer your queries.</p>
+          <p>The Agrawal Hospital ICU is a specialized adult medical and surgical care facility for patients who need
+            constant monitoring, intensive nursing care,and complex respiratory support. ICU is centrally air
+            conditioned with 8 cubicles .All of them are equipped with mechanical ventilators, central oxygen&suction,
+            multipara sophisticated bedside monitors and other life support equipments. Our ICU is equipped to provide
+            safe, high-quality, personalized care. All of our intensive care nurses have advanced training in the needs
+            of the critically ill patient. Agrawal hospital’s extensive benches of physicians are always available for
+            consultation. In addition to a high-technology care plan, we offer encouragement, understanding, respect,
+            care and compassion to the patients and the family members. We make ourselves as accessible as possible to
+            listen your concerns and answer your queries.</p>
         </div>
         <div class="page-content__visual anim-right">
           <img src="assets/services/icu.jpg" alt="Intensive care unit" width="100%">
@@ -217,34 +350,58 @@
       </div>
     </div>
   </section>
-  
+
   <section class="page-content">
     <div class="container">
       <div class="page-content__grid">
         <div class="anim-left">
           <div class="section-tag">Our Facilities</div>
           <h3>Patient Assistance</h3>
-          <p>Agrawal hospital prides itself in following its policy of keeping patient’s needs first in every aspect. Our dedicated staff tries to be of assistance at every step of the way to your recovery. We offer Emergency Services, Wheel chair assistance and pharmacy. There is a small cafeteria that serves basic snacks , tea and coffee to the waiting family.</p>
+          <p>Agrawal hospital prides itself in following its policy of keeping patient's needs first in every aspect.
+            Our dedicated staff tries to be of assistance at every step of the way to your recovery. We offer Emergency
+            Services, Wheel chair assistance and pharmacy. There is a small cafeteria that serves basic snacks , tea and
+            coffee to the waiting family.</p>
         </div>
         <div class="page-content__visual anim-right">
-            <img class="img-fluid" src="assets/services/assistance1.jpg" alt="Agrawal Hospital Patient Assistance" width="100%">
-            <img class="img-fluid" src="assets/services/assistance2.jpg" alt="Agrawal Hospital Patient Assistance" width="100%">
-            <img class="img-fluid" src="assets/services/assistance3.jpg" alt="Agrawal Hospital Patient Assistance" width="100%">
-            <img class="img-fluid" src="assets/services/assistance4.jpg" alt="Agrawal Hospital Patient Assistance" width="100%">
-            <img class="img-fluid" src="assets/services/assistance5.jpg" alt="Agrawal Hospital Patient Assistance" width="100%">
-            <img class="img-fluid" src="assets/services/assistance6.jpg" alt="Agrawal Hospital Patient Assistance" width="100%">
+          <div class="patient__img-frame">
+            <div class="patient__img-slider">
+              <div class="patient__img-slide">
+                <img src="assets/services/assistance1.jpg" style="width:100%; height:100%; object-fit:cover;">
+              </div>
+              <div class="patient__img-slide">
+                <img src="assets/services/assistance2.jpg" style="width:100%; height:100%; object-fit:cover;">
+              </div>
+              <div class="patient__img-slide">
+                <img src="assets/services/assistance3.jpg" style="width:100%; height:100%; object-fit:cover;">
+              </div>
+              <div class="patient__img-slide">
+                <img src="assets/services/assistance4.jpg" style="width:100%; height:100%; object-fit:cover;">
+              </div>
+              <div class="patient__img-slide">
+                <img src="assets/services/assistance5.jpg" style="width:100%; height:100%; object-fit:cover;">
+              </div>
+              <div class="patient__img-slide">
+                <img src="assets/services/assistance6.jpg" style="width:100%; height:100%; object-fit:cover;">
+              </div>
+            </div>
+            <button class="patient__img-control patient__img-control--prev">&#10094;</button>
+            <button class="patient__img-control patient__img-control--next">&#10095;</button>
+            <div class="patient__img-dots"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  
+
   <section class="page-content" style="background: var(--cream);">
     <div class="container">
       <div class="page-content__grid">
         <div class="anim-left">
           <div class="section-tag">Our Facilities</div>
           <h3>Department Of Pharmacy</h3>
-          <p>The Department of Pharmacy at Agrawal Hospital is equipped with state-of-the-art facilities and a team of highly qualified pharmacists. We ensure the safe and effective use of medications and provide comprehensive pharmaceutical care to all our patients.</p>
+          <p>The Department of Pharmacy at Agrawal Hospital is equipped with state-of-the-art facilities and a team of
+            highly qualified pharmacists. We ensure the safe and effective use of medications and provide comprehensive
+            pharmaceutical care to all our patients.</p>
         </div>
         <div class="page-content__visual anim-right">
           <img src="assets/services/department-of-pharmacy.jpg" alt="Department of Pharmacy" width="100%">
@@ -252,14 +409,18 @@
       </div>
     </div>
   </section>
-  
+
   <section class="page-content">
     <div class="container">
       <div class="page-content__grid">
         <div class="anim-left">
           <div class="section-tag">Our Facilities</div>
           <h3>Ambulance Service</h3>
-          <p>The ambulance service is an integral part of Emergency and Critical Care Health centers. Ambulances at Agrawal hospital are equipped to handle most complex emergencies and are available to our patients 24 hrs of the day and night. These ambulances carry as standard equipment, a ventilator, a Defibrillator, Oxygen and all the other life saving drugs. Staffs manning these ambulances are well trained in managing emergencies in their respective fields.Area Coverage of Our Ambulance : Arera Colony, Shakti Nagar, Alkapuri.</p>
+          <p>The ambulance service is an integral part of Emergency and Critical Care Health centers. Ambulances at
+            Agrawal hospital are equipped to handle most complex emergencies and are available to our patients 24 hrs of
+            the day and night. These ambulances carry as standard equipment, a ventilator, a Defibrillator, Oxygen and
+            all the other life saving drugs. Staffs manning these ambulances are well trained in managing emergencies in
+            their respective fields.Area Coverage of Our Ambulance : Arera Colony, Shakti Nagar, Alkapuri.</p>
         </div>
         <div class="page-content__visual anim-right">
           <img src="assets/img/facility/ambulance2.jpg" alt="Ambulance" width="100%">
@@ -267,7 +428,7 @@
       </div>
     </div>
   </section>
-  
+
   <section class="cta">
     <div class="cta__glow"></div>
     <div class="container">
@@ -293,86 +454,86 @@
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <div class="footer__logo">
-            <div class="footer__logo-icon">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
-              </svg>
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <div class="footer__logo-icon">
+                            <img src="assets/img/favicon.png" alt="Agrawal Hospital Logo">
+                        </div>
+                        <div class="footer__logo-text">Agrawal Hospital</div>
+                    </div>
+                    <p class="footer__desc">We strive to exceed your expectations and encourage you to be an active participant in your care. We treat you with courtesy and respect, listen carefully, and explain things to ensure your understanding.</p>
+                    <div class="footer__social">
+                        <a href="#"><svg viewBox="0 0 24 24">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                            </svg></a>
+                        <a href="https://www.youtube.com/channel/UCSOfbbZ3V7-ASSnf-pCWPYg/videos" target="_blank"><svg
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29.94 29.94 0 001 11.75a29.94 29.94 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29.94 29.94 0 00.46-5.25 29.94 29.94 0 00-.46-5.33z" />
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48" fill="var(--navy)" />
+                            </svg></a>
+                        <a href="#"><svg viewBox="0 0 24 24">
+                                <path
+                                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer__heading">Clinical Services</div>
+                    <div class="footer__links">
+                        <a href="respiratory-medicine.html">Respiratory Medicine</a>
+                        <a href="obstetrics-gynaecology.html">Obstetrics & Gynaecology</a>
+                        <a href="emergency-critical-care.html">Emergency & Critical Care</a>
+                        <a href="general-surgery.html">General Surgery</a>
+                        <a href="general-medicine.html">General Medicine</a>
+                        <a href="clinical-haematology.html">Clinical Haematology</a>
+                        <a href="ent.html">ENT</a>
+                        <a href="anaesthesiology.html">Anaesthesiology</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer__heading">Diagnostics</div>
+                    <div class="footer__links">
+                        <a href="pathology.html">All Pathological Tests</a>
+                        <a href="x-ray.html">X-ray</a>
+                        <a href="ultrasound.html">Ultrasound</a>
+                        <a href="ecg.html">ECG</a>
+                        <a href="colour-doppler.html">Colour Doppler</a>
+                        <a href="pulmonary-function-test.html">Pulmonary Function Test</a>
+                        <a href="allergy-testing.html">Allergy Testing</a>
+                        <a href="sleep-study.html">Sleep Study</a>
+                        <a href="audiometry.html">Audiometry</a>
+                        <a href="2d-echo.html">2D Echo</a>
+                        <a href="spirometry.html">Spirometry</a>
+                        
+                    </div>
+                </div>
+                <div>
+                    <div class="footer__heading">Quick Links</div>
+                    <div class="footer__links">
+                        <a href="founder.html">About Us</a>
+                        <a href="our-experts.html">Our Experts</a>
+                        <a href="facilities.html">Facilities</a>
+                        <a href="events.html">Events & News</a>
+                        <a href="video-gallery.html">Video Gallery</a>
+                        <a href="reviews.html">Patient Reviews</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
             </div>
-            <div class="footer__logo-text">Agrawal Hospital</div>
-          </div>
-          <p class="footer__desc">We strive to exceed your expectations and encourage you to be an active participant in
-            your care. We treat you with courtesy and respect, listen carefully, and explain things to ensure your
-            understanding.</p>
-          <div class="footer__social">
-            <a href="#"><svg viewBox="0 0 24 24">
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-              </svg></a>
-            <a href="https://www.youtube.com/channel/UCSOfbbZ3V7-ASSnf-pCWPYg/videos"><svg viewBox="0 0 24 24">
-                <path
-                  d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29.94 29.94 0 001 11.75a29.94 29.94 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29.94 29.94 0 00.46-5.25 29.94 29.94 0 00-.46-5.33z" />
-                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48" fill="var(--navy)" />
-              </svg></a>
-            <a href="#"><svg viewBox="0 0 24 24">
-                <path
-                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-              </svg></a>
-          </div>
+            <div class="footer__bottom">
+                <div class="footer__copy">&copy; 2025 Agrawal Multispeciality Hospital, Bhopal. All rights reserved.
+                </div>
+                <div class="footer__badges">
+                    <div class="footer__badge">NABH Accredited</div>
+                    <div class="footer__badge">ISO Certified</div>
+                    <div class="footer__badge">BSNL Authorized</div>
+                </div>
+            </div>
         </div>
-        <div>
-          <div class="footer__heading">Clinical Services</div>
-          <div class="footer__links">
-            <a href="#" href="respiratory-medicine.html">Respiratory Medicine</a>
-            <a href="#" href="obstetrics-gynaecology.html">Obstetrics & Gynaecology</a>
-            <a href="#" href="emergency-critical-care.html">Emergency & Critical Care</a>
-            <a href="#" href="general-surgery.html">General Surgery</a>
-            <a href="#" href="general-medicine.html">General Medicine</a>
-            <a href="#" href="clinical-haematology.html">Clinical Haematology</a>
-            <a href="#">ENT</a>
-            <a href="#" href="anaesthesiology.html">Anaesthesiology</a>
-          </div>
-        </div>
-        <div>
-          <div class="footer__heading">Diagnostics</div>
-          <div class="footer__links">
-            <a href="#" href="pathology.html">Pathology Lab</a>
-            <a href="#" href="xray.html">X-Ray</a>
-            <a href="#" href="ultrasound.html">Ultrasound</a>
-            <a href="#" href="ecg.html">ECG & 2D Echo</a>
-            <a href="#" href="spirometry.html">Spirometry & PFT</a>
-            <a href="#" href="bronchoscopy.html">Video Bronchoscopy</a>
-            <a href="#" href="colour-doppler.html">Colour Doppler</a>
-            <a href="#" href="allergy-testing.html">Allergy Testing</a>
-          </div>
-        </div>
-        <div>
-          <div class="footer__heading">Quick Links</div>
-          <div class="footer__links">
-            <a href="#" href="founder.html">About Us</a>
-            <a href="#" href="our-experts.html">Our Experts</a>
-            <a href="#" href="facilities.html">Facilities</a>
-            <a href="#" href="index.html">Events & News</a>
-            <a href="#" href="index.html">Video Gallery</a>
-            <a href="#" href="reviews.html">Patient Reviews</a>
-            <a href="#" href="contact.html">Contact Us</a>
-            <a href="#" href="contact.html">Careers</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <div class="footer__copy">&copy; 2025 Agrawal Multispeciality Hospital, Bhopal. All rights reserved.</div>
-        <div class="footer__badges">
-          <div class="footer__badge">NABH Accredited</div>
-          <div class="footer__badge">ISO Certified</div>
-          <div class="footer__badge">BSNL Authorized</div>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
   <!-- ===== SCROLL ANIMATIONS JS ===== -->
   <script>
@@ -410,6 +571,72 @@
         }
       });
     });
+
+
+    // Patient image slider behavior
+    (function () {
+      const slider = document.querySelector('.patient__img-slider');
+      if (!slider) return;
+
+      const track = slider;
+      const slides = Array.from(slider.querySelectorAll('.patient__img-slide'));
+      const prevBtn = document.querySelector('.patient__img-control--prev');
+      const nextBtn = document.querySelector('.patient__img-control--next');
+      const dotsContainer = document.querySelector('.patient__img-dots');
+      let currentIndex = 0;
+      let autoplayId = null;
+
+      slides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'patient__img-dot';
+        dot.setAttribute('aria-label', `Go to image ${index + 1}`);
+        dot.addEventListener('click', () => {
+          currentIndex = index;
+          updateSlider();
+          restartAutoplay();
+        });
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = Array.from(dotsContainer.children);
+
+      function updateSlider() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, idx) => dot.classList.toggle('active', idx === currentIndex));
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlider();
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlider();
+      }
+
+      function restartAutoplay() {
+        clearInterval(autoplayId);
+        autoplayId = setInterval(nextSlide, 5000);
+      }
+
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        restartAutoplay();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        restartAutoplay();
+      });
+
+      slider.addEventListener('mouseenter', () => clearInterval(autoplayId));
+      slider.addEventListener('mouseleave', restartAutoplay);
+
+      updateSlider();
+      restartAutoplay();
+    })();
 
     // Counter animation for stats
     function animateCounters() {
